@@ -17,6 +17,8 @@ namespace NetMQ.zmq
         {
             switch (error)
             {
+                case SocketError.SocketError:
+                    return ErrorCode.Unspecified;
                 case SocketError.AccessDenied:
                     return ErrorCode.AccessDenied;
                 case SocketError.Fault:
@@ -57,7 +59,7 @@ namespace NetMQ.zmq
                     return ErrorCode.HostUnreachable;
                 default:
                     Debug.Assert(false);
-                    return 0;
+                    return ErrorCode.Unknown;
             }
         }
     }

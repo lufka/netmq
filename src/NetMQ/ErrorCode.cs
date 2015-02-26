@@ -7,6 +7,12 @@ namespace NetMQ
     /// </summary>
     public enum ErrorCode
     {
+        /// <summary>An error was reported with a status that tells us the error is unspecified.</summary>
+        Unspecified = -1,
+
+        /// <summary>An error was reported with an unrecognised status.</summary>
+        Unknown = 0,
+
         EndpointNotFound = 2,
         AddressAlreadyInUse = 48,
         TryAgain = 35,
