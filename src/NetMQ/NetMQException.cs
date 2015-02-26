@@ -55,6 +55,7 @@ namespace NetMQ
         /// <param name="error">a SocketError that this exception will carry and expose via it's ErrorCode property</param>
         /// <param name="innerException">an Exception that this exception will expose via it's InnerException property</param>
         /// <returns>a new NetMQException</returns>
+        [NotNull]
         public static NetMQException Create(SocketError error, [CanBeNull] Exception innerException)
         {
             var errorCode = ErrorHelper.SocketErrorToErrorCode(error);
