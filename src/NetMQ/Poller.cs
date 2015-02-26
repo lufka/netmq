@@ -564,10 +564,12 @@ namespace NetMQ
 
             if (m_isStarted)
             {
+                // Set a flag so that PollTillCancelled will exit
                 Interlocked.Exchange(ref m_cancel, 1);
 
                 if (waitForCloseToComplete)
                 {
+                    // Block until PollTillCancelled is finished
                     m_isStoppedEvent.WaitOne();
                 }
 
